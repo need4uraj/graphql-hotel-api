@@ -1,0 +1,14 @@
+Please follow the steps in the same order as mentioned below.
+
+1) Extract the zip file content and ensure that you have the following folder extracted
+	hotels-api
+
+2) Open a new terminal and navigate to the folder where you have the hotels-api and follow the instructions as below
+	hotels-api > npm install
+3) Execute the following command to run the server
+    npm run start
+
+GraphQL server runs in the port 5000
+
+
+	 

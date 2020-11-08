@@ -1,0 +1,36 @@
+mutation{
+  createHotel(
+    data:{
+      name:"Radisson Blu",
+      address:"Marathahalli, Bangalore",
+      rating: 4.2,
+      phone: "080 3000 1234",
+      email: "reservations@radissonblu.com",
+      latitude: 70.23,
+      longitude: 78.43,
+      country: "India",
+      pincode: "560037",
+      checkIn: "From 12:00 PM",
+      checkOut: "Prior to 12:00 PM",
+      wifi:true
+      roomService:true
+      laundry:true
+      locker:false
+      swimmingPool:true
+      giftShops:false
+  }
+){
+    id
+    name
+    address
+    rating
+    phone
+    email
+    latitude
+    longitude
+    country
+    pincode
+    checkIn
+    checkOut
+  }
+}

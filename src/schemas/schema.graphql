@@ -1,0 +1,71 @@
+const {gql} = require('apollo-server')
+const typeDefs = gql`
+    type Query {
+        hotels:[Hotels!]!
+        hotelsById(id: ID!): Hotels
+        hotelsByLatLong(lat: Float!,long:Float!): [Hotels!]!
+        tarrif(hotelId:Int!):[TarrifDetails!]!
+        reviews(hotelId:Int!):[ReviewDetails!]!
+        amentities(hotelId:Int!):[AmentiesDetails!]!
+    }
+    type Mutation{
+        createHotel(data:createHotelInput!): Hotels!
+    }
+    type Hotels{
+        id:ID!
+        name:String!
+        address:String!
+        rating:Float
+        phone:String!
+        email:String!
+        latitude:Float!
+        longitude:Float!
+        country:String!
+        pincode:String!        
+        checkIn:String!
+        checkOut:String!
+    }
+    type TarrifDetails{
+        id:ID!
+        hotelId:Int!
+        roomType:String!
+        tariff:Float!
+    }
+    type ReviewDetails{
+        id:ID!
+        hotelId:Int!
+        reviewer:String!
+        comments:String
+        rating:Float!        
+    }
+    type AmentiesDetails{
+        id:ID!
+        hotelId:Int!
+        wifi:Boolean!
+        roomService:Boolean!
+        laundry:Boolean!
+        locker:Boolean!
+        swimmingPool:Boolean!
+        giftShops:Boolean!
+    }
+    input createHotelInput{
+        name:String!
+        address:String!
+        rating:Float!
+        phone:String!
+        email:String!
+        latitude:Float!
+        longitude:Float!
+        country:String!
+        pincode:String!        
+        checkIn:String!
+        checkOut:String!
+        wifi:Boolean!
+        roomService:Boolean!
+        laundry:Boolean!
+        locker:Boolean!
+        swimmingPool:Boolean!
+        giftShops:Boolean!
+    }    
+`;
+export {typeDefs as default}

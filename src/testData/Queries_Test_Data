@@ -1,0 +1,49 @@
+fragment HotelFields on Hotels{
+    name
+    address
+    rating
+    phone
+    email
+    latitude
+    longitude
+    country
+    pincode
+    checkIn
+    checkOut
+}
+query{
+  hotels{
+     id
+    ...HotelFields
+  }
+  hotelsById(id:1){
+    id
+    ...HotelFields
+  }
+  hotelsByLatLong(lat:12.9733, long:77.6197){
+    id
+    ...HotelFields
+  }
+  tarrif(hotelId:1){
+    id
+    hotelId
+    roomType
+    tariff
+  }
+  reviews(hotelId:1){
+    id
+    hotelId
+    reviewer
+    comments
+    rating
+  }
+   amentities(hotelId:1){
+    id
+    hotelId
+    wifi
+    roomService
+    locker
+    swimmingPool
+    giftShops
+  }
+}
